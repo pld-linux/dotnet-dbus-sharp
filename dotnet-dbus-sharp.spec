@@ -16,7 +16,6 @@ URL:		http://www.freedesktop.org/Software/dbus
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
 BuildRequires:	mono-csharp >= 1.1.7
-BuildRequires:	monodoc >= 1.0.7-2
 BuildRequires:	rpmbuild(macros) >= 1.268
 BuildRequires:	sed >= 4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -31,7 +30,7 @@ Biblioteka .NET do u¿ywania D-BUS.
 Summary:	.NET library for using D-BUS with API documentation
 Summary(pl):	Biblioteka .NET do u¿ywania D-BUS, zawiera dokumentacjê API
 Group:		Development/Libraries
-Requires:	dotnet-%{name}-sharp = %{version}-%{release}
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
 .NET library for using D-BUS, with API documentation.
