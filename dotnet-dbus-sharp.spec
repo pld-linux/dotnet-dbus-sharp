@@ -1,8 +1,8 @@
 #
 %include	/usr/lib/rpm/macros.mono
 #
-Summary:	D-BUS message bus
-Summary(pl):	Magistrala przesy³ania komunikatów D-BUS
+Summary:	.NET library for using D-BUS message bus
+Summary(pl):	Biblioteka .NET do u¿ywania magistrali przesy³ania komunikatów D-BUS
 Name:		dotnet-dbus-sharp
 Version:	0.63
 Release:	1
@@ -27,16 +27,16 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Biblioteka .NET do u¿ywania D-BUS.
 
 %package devel
-Summary:	.NET library for using D-BUS with API documentation
-Summary(pl):	Biblioteka .NET do u¿ywania D-BUS, zawiera dokumentacjê API
+Summary:	Development .NET library for using D-BUS
+Summary(pl):	Programistyczna biblioteka .NET do u¿ywania D-BUS
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
-.NET library for using D-BUS, with API documentation.
+Development .NET library for using D-BUS.
 
 %description devel -l pl
-Biblioteka .NET do u¿ywania D-BUS, zawiera dokumentacjê API.
+Programistyczna biblioteka .NET do u¿ywania D-BUS.
 
 %prep
 %setup -qn dbus-mono-%{version}
