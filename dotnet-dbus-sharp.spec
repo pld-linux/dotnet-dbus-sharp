@@ -15,6 +15,7 @@ Patch1:		dbus-monodir.patch
 URL:		http://www.freedesktop.org/Software/dbus
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
+BuildRequires:	libtool
 BuildRequires:	mono-csharp >= 1.1.7
 BuildRequires:	rpmbuild(macros) >= 1.268
 BuildRequires:	sed >= 4.0
