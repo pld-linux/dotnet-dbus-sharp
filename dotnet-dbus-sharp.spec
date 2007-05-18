@@ -18,6 +18,7 @@ BuildRequires:	automake
 BuildRequires:	libtool
 BuildRequires:	mono-csharp >= 1.1.7
 BuildRequires:	rpmbuild(macros) >= 1.268
+BuildRequires:	rpmbuild(monoautodeps)
 BuildRequires:	sed >= 4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
