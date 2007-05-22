@@ -12,7 +12,7 @@ Source0:	dbus-mono-%{version}.tar.bz2
 # Source0-md5:	d87d155d643ae19ab48851c3820dbeb5
 Patch0:		dbus-mint.patch
 Patch1:		dbus-monodir.patch
-URL:		http://www.freedesktop.org/Software/dbus
+URL:		http://www.freedesktop.org/Software/DBusBindings
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
 BuildRequires:	libtool
