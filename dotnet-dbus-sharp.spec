@@ -4,14 +4,13 @@
 Summary:	.NET library for using D-BUS message bus
 Summary(pl.UTF-8):	Biblioteka .NET do używania magistrali przesyłania komunikatów D-BUS
 Name:		dotnet-dbus-sharp
-Version:	0.63
-Release:	3
-License:	AFL v2.1 or GPL v2
+Version:	0.7.0
+Release:	1
+Epoch:		1
+License:	AFL v2.1 or GPL v2+
 Group:		Libraries
-Source0:	dbus-mono-%{version}.tar.bz2
-# Source0-md5:	d87d155d643ae19ab48851c3820dbeb5
-Patch0:		dbus-mint.patch
-Patch1:		dbus-monodir.patch
+Source0:	dbus-sharp-%{version}.tar.gz
+# Source0-md5:	1964fc341dcbaeda859c53cee295d042
 URL:		http://www.freedesktop.org/Software/DBusBindings
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
@@ -32,7 +31,7 @@ Biblioteka .NET do używania D-BUS.
 Summary:	Development .NET library for using D-BUS
 Summary(pl.UTF-8):	Programistyczna biblioteka .NET do używania D-BUS
 Group:		Development/Libraries
-Requires:	%{name} = %{version}-%{release}
+Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description devel
 Development .NET library for using D-BUS.
@@ -41,19 +40,12 @@ Development .NET library for using D-BUS.
 Programistyczna biblioteka .NET do używania D-BUS.
 
 %prep
-%setup -qn dbus-mono-%{version}
-%patch0 -p0
-%patch1 -p1
-
-# don't build dotnet-gtk-sharp based examples
-# (depends on old gtk-sharp)
-sed -i -e 's/example//' mono/Makefile.am
+%setup -q -n dbus-sharp-%{version}
 
 %build
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}
-%{__autoheader}
 %{__automake}
 %configure
 %{__make}
@@ -69,9 +61,10 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%doc AUTHORS README
 %{_prefix}/lib/mono/gac/dbus-sharp
+%{_prefix}/lib/mono/dbus-sharp-1.0
 
 %files devel
 %defattr(644,root,root,755)
-%{_prefix}/lib/mono/dbus-sharp
-%{_pkgconfigdir}/dbus-sharp.pc
+%{_pkgconfigdir}/dbus-sharp-*.pc
