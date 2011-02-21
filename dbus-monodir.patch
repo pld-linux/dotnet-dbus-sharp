@@ -1,0 +1,13 @@
+--- dbus-sharp-0.7.0/src/Makefile.am~	2010-09-15 12:16:28.000000000 +0200
++++ dbus-sharp-0.7.0/src/Makefile.am	2011-02-21 16:27:11.723100314 +0100
+@@ -42,8 +42,8 @@
+ 
+ install-data-local: $(TARGET)
+ 	@if test -n '$(TARGET)'; then                       \
+-          echo "$(GACUTIL) /i $(TARGET) /f /gacdir $(DESTDIR)$(libdir)";    \
+-          $(GACUTIL) /i $(TARGET) /package $(PACKAGE)-$(API_VERSION) /f /gacdir $(libdir) /root $(DESTDIR)$(libdir) || exit 1; \
++          echo "$(GACUTIL) /i $(TARGET) /f /gacdir $(DESTDIR)$(prefix)/lib";    \
++          $(GACUTIL) /i $(TARGET) /package $(PACKAGE)-$(API_VERSION) /f /gacdir $(libdir) /root $(DESTDIR)$(prefix)/lib || exit 1; \
+         fi
+ 
+ uninstall-local:
