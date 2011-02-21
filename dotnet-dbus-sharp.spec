@@ -11,6 +11,7 @@ License:	AFL v2.1 or GPL v2+
 Group:		Libraries
 Source0:	http://github.com/downloads/mono/dbus-sharp/dbus-sharp-%{version}.tar.gz
 # Source0-md5:	1964fc341dcbaeda859c53cee295d042
+Patch0:		dbus-monodir.patch
 URL:		http://www.freedesktop.org/Software/DBusBindings
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
@@ -41,6 +42,7 @@ Programistyczna biblioteka .NET do używania D-BUS.
 
 %prep
 %setup -q -n dbus-sharp-%{version}
+%patch0 -p1
 
 %build
 %{__libtoolize}
