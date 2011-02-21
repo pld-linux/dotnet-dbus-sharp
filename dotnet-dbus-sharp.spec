@@ -1,6 +1,7 @@
-#
+
 %include	/usr/lib/rpm/macros.mono
-#
+%define		module	dbus-sharp
+
 Summary:	.NET library for using D-BUS message bus
 Summary(pl.UTF-8):	Biblioteka .NET do używania magistrali przesyłania komunikatów D-BUS
 Name:		dotnet-dbus-sharp
@@ -9,7 +10,7 @@ Release:	2
 Epoch:		1
 License:	AFL v2.1 or GPL v2+
 Group:		Libraries
-Source0:	http://github.com/downloads/mono/dbus-sharp/dbus-sharp-%{version}.tar.gz
+Source0:	http://github.com/downloads/mono/dbus-sharp/%{module}-%{version}.tar.gz
 # Source0-md5:	1964fc341dcbaeda859c53cee295d042
 Patch0:		dbus-monodir.patch
 URL:		http://www.freedesktop.org/Software/DBusBindings
@@ -41,7 +42,7 @@ Development .NET library for using D-BUS.
 Programistyczna biblioteka .NET do używania D-BUS.
 
 %prep
-%setup -q -n dbus-sharp-%{version}
+%setup -q -n %{module}-%{version}
 %patch0 -p1
 
 %build
