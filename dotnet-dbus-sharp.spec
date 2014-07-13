@@ -2,44 +2,52 @@
 %include	/usr/lib/rpm/macros.mono
 %define		module	dbus-sharp
 
-Summary:	.NET library for using D-BUS message bus
-Summary(pl.UTF-8):	Biblioteka .NET do używania magistrali przesyłania komunikatów D-BUS
+Summary:	D-Bus for .NET - C# library implementing D-Bus
+Summary(pl.UTF-8):	D-Bus dla .NET - biblioteka C# implementująca D-Bus
 Name:		dotnet-dbus-sharp
 Version:	0.7.0
-Release:	2
+Release:	3
 Epoch:		1
-License:	AFL v2.1 or GPL v2+
+License:	MIT
 Group:		Libraries
+#Source0Download: https://github.com/mono/dbus-sharp/downloads
 Source0:	http://github.com/downloads/mono/dbus-sharp/%{module}-%{version}.tar.gz
 # Source0-md5:	1964fc341dcbaeda859c53cee295d042
 Patch0:		dbus-monodir.patch
-URL:		http://www.freedesktop.org/Software/DBusBindings
+URL:		http://mono.github.com/dbus-sharp/
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
 BuildRequires:	libtool
-BuildRequires:	mono-csharp >= 1.1.7
+BuildRequires:	mono-csharp >= 1.1.13
+BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.268
 BuildRequires:	rpmbuild(monoautodeps)
 BuildRequires:	sed >= 4.0
+Requires:	mono >= 1.1.13
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-.NET library for using D-BUS.
+dbus-sharp is a fork of ndesk-dbus, which is a C# implementation of
+D-Bus. It's often referred to as "managed D-Bus" to avoid confusion
+with other existing bindings (which wrap libdbus).
 
 %description -l pl.UTF-8
-Biblioteka .NET do używania D-BUS.
+dbus-sharp to odgałęzienie ndesk-dbus, czyli implementacji D-Bus w
+języku C#. Często jest nazywane "zarządzanym D-Bus" w odróżnieniu od
+innych istniejących wiązań, obudowujących bibliotekę libdbus.
 
 %package devel
-Summary:	Development .NET library for using D-BUS
-Summary(pl.UTF-8):	Programistyczna biblioteka .NET do używania D-BUS
+Summary:	Development files for dbus-sharp library
+Summary(pl.UTF-8):	Pliki programistyczne biblioteki dbus-sharp
 Group:		Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	mono-devel >= 1.1.13
 
 %description devel
-Development .NET library for using D-BUS.
+Development files for dbus-sharp library.
 
 %description devel -l pl.UTF-8
-Programistyczna biblioteka .NET do używania D-BUS.
+Pliki programistyczne biblioteki dbus-sharp.
 
 %prep
 %setup -q -n %{module}-%{version}
@@ -64,10 +72,10 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS README
+%doc AUTHORS COPYING README
 %{_prefix}/lib/mono/gac/dbus-sharp
-%{_prefix}/lib/mono/dbus-sharp-1.0
 
 %files devel
 %defattr(644,root,root,755)
-%{_pkgconfigdir}/dbus-sharp-*.pc
+%{_prefix}/lib/mono/dbus-sharp-1.0
+%{_pkgconfigdir}/dbus-sharp-1.0.pc
