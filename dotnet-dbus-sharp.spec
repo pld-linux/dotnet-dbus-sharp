@@ -17,7 +17,6 @@ Patch0:		dbus-monodir.patch
 URL:		http://mono.github.com/dbus-sharp/
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
-BuildRequires:	libtool
 BuildRequires:	mono-csharp >= 1.1.13
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.268
@@ -54,7 +53,6 @@ Pliki programistyczne biblioteki dbus-sharp.
 %patch0 -p1
 
 %build
-%{__libtoolize}
 %{__aclocal}
 %{__autoconf}
 %{__automake}
