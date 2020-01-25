@@ -1,5 +1,4 @@
 
-%include	/usr/lib/rpm/macros.mono
 %define		module	dbus-sharp
 
 Summary:	D-Bus for .NET - C# library implementing D-Bus
