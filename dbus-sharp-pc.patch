@@ -1,0 +1,8 @@
+--- dbus-sharp-0.8.1/dbus-sharp-2.0.pc.in.orig	2013-10-07 01:56:21.000000000 +0200
++++ dbus-sharp-0.8.1/dbus-sharp-2.0.pc.in	2022-04-26 20:31:45.566928287 +0200
+@@ -8,4 +8,4 @@ Name: Managed DBus
+ Description: Managed D-Bus IPC protocol library and CLR binding
+ Version: @VERSION@
+ URL: http://mono.github.com/dbus-sharp/
+-Libs: -r:${libdir}/mono/@PACKAGE@-@API_VERSION@/dbus-sharp.dll
++Libs: -r:${prefix}/lib/mono/@PACKAGE@-@API_VERSION@/dbus-sharp.dll
