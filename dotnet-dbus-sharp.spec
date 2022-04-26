@@ -23,6 +23,9 @@ BuildRequires:	sed >= 4.0
 Requires:	mono >= 1.1.13
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
+# no native code
+%define		_enable_debug_packages	0
+
 %description
 dbus-sharp is a fork of ndesk-dbus, which is a C# implementation of
 D-Bus. It's often referred to as "managed D-Bus" to avoid confusion
