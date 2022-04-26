@@ -13,7 +13,6 @@ Group:		Libraries
 Source0:	https://github.com/mono/dbus-sharp/releases/download/v%{version}/%{module}-%{version}.tar.gz
 # Source0-md5:	bb94ab3d9703342a2e936e52c87c783a
 Patch0:		dbus-monodir.patch
-Patch1:		dbus-sharp-pc.patch
 URL:		http://mono.github.io/dbus-sharp/
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
@@ -53,7 +52,6 @@ Pliki programistyczne biblioteki dbus-sharp.
 %prep
 %setup -q -n %{module}-%{version}
 %patch0 -p1
-%patch1 -p1
 
 %build
 %{__aclocal}
